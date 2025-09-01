@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyantri Coffee - Menu</title>
+  <!-- Fonts and Tailwind -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap');
+    .serif { font-family: 'Playfair Display', serif; }
+    .sans { font-family: 'Inter', sans-serif; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="opacity-0 transition-opacity duration-1000 ease-in-out" onload="window.requestAnimationFrame(() => document.body.classList.remove('opacity-0'))">
+  <nav class="absolute top-0 left-0 right-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-md text-white z-20">
+    <div class="max-w-full w-full px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl font-semibold serif">Niyantri Coffee</span>
+      </div>
+      <div class="hidden md:flex space-x-6 sans">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="hover:underline">Cart</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="cart.html" class="px-4 py-2 text-sm rounded transition-all duration-300 ease-in-out hover:scale-105 bg-gradient-to-r from-amber-400 to-orange-600">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="w-full h-screen bg-cover bg-center" style="background-image: url('https://pixabay.com/get/g3e887f987e558d579dd06bdeaabeeb7d45972903b4888aad6c74e77548ebc6fd7a616cbc26031deaa236f580df306aa74a58dfc52c230536af8eead28fe7c4b8_640.jpg');">
+    <div class="flex items-center justify-center h-full w-full bg-black bg-opacity-40">
+      <div class="text-center px-6 py-8 max-w-3xl">
+        <h1 class="serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6">Menu</h1>
+        <p class="sans text-white text-lg mb-6">Curated selections of classic and specialty coffees.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="w-full p-6 md:p-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Menu items -->
+    ${[
+      {n:'Espresso', p:'2.50', d:'Single shot of rich, dark espresso.'},
+      {n:'Americano', p:'3.00', d:'Espresso with hot water for a lighter body.'},
+      {n:'Cappuccino', p:'3.50', d:'Espresso with steamed milk and foam.'},
+      {n:'Latte', p:'4.00', d:'Creamy milk with a double shot of espresso.'},
+      {n:'Mocha', p:'4.50', d:'Espresso with chocolate, milk, and whipped cream.'},
+      {n:'Cold Brew', p:'4.25', d:'Slow-steeped for a smooth, bold flavor.'}
+    ].map((it,i)=>`<div class=\"bg-white/80 rounded-lg shadow-md p-4 transition-all duration-300 ease-in-out hover:shadow-lg\"><img src=\"https://pixabay.com/get/g68dc4e31117290d1cae594f82c5828f183d47d3a3799cd198439a6cbfc6a1d2a28752ecd8a0c5f2f1697396169f5a3cdb3fd3d6b4aeaf6e1b3b77f690c44ec7e_640.jpg}\" alt=\"${it.n}\" class=\"w-full h-40 object-cover rounded\" /><div class=\"mt-4\"><h3 class=\"font-semibold sans text-gray-800\">${it.n}</h3><p class=\"text-sm text-gray-600\">${it.d}</p><div class=\"flex items-center justify-between mt-3\"><span class=\"font-semibold text-gray-800\">$${it.p}</span><button class=\"add-to-cart px-4 py-2 rounded bg-gradient-to-r from-amber-400 to-orange-600 text-white transition-all duration-300 ease-in-out hover:scale-105\" data-name=\"${it.n}\" data-price=\"${it.p}\">Add</button></div></div></div>`).join('')} 
+  </main>
+
+  <footer class="w-full bg-gray-900 text-white py-6 text-center mt-6">
+    <p>&copy; 2025 Niyantri Coffee. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple cart using localStorage for demo purposes
+    function addToCart(e){
+      const name = e.target.getAttribute('data-name');
+      const price = e.target.getAttribute('data-price');
+      if(!name) return;
+      const item = { name, price: parseFloat(price), qty: 1 };
+      const cart = JSON.parse(localStorage.getItem('niyantri_cart')||'[]');
+      const idx = cart.findIndex(i => i.name===name);
+      if(idx>-1){ cart[idx].qty += 1; } else { cart.push(item); }
+      localStorage.setItem('niyantri_cart', JSON.stringify(cart));
+      alert(name + ' added to cart');
+    }
+    document.querySelectorAll('.add-to-cart').forEach(btn => btn.addEventListener('click', addToCart));
+  </script>
+  <script>window.addEventListener('load', () => document.body.classList.remove('opacity-0'));</script>
+</body>
+</html>
