@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyantri Coffee - Contact</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap');
+    .serif { font-family: 'Playfair Display', serif; }
+    .sans { font-family: 'Inter', sans-serif; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 sans">
+  <nav class="bg-black bg-opacity-40 backdrop-filter backdrop-blur-md text-white py-4 px-6 fixed top-0 left-0 right-0 z-20">
+    <div class="flex items-center justify-between">
+      <span class="text-2xl serif">Niyantri Coffee</span>
+      <div class="space-x-4 hidden md:flex">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="hover:underline">Cart</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <main class="mt-20 max-w-3xl mx-auto">
+    <section class="p-6 bg-white/80 rounded shadow mb-6">
+      <h1 class="serif text-3xl mb-2">Get In Touch</h1>
+      <p class="sans text-gray-700">We’d love to hear from you. Reach out with any questions or feedback.</p>
+      <form class="mt-4 grid grid-cols-1 gap-4">
+        <input class="p-3 rounded border border-gray-300" placeholder="Your Name" />
+        <input class="p-3 rounded border border-gray-300" placeholder="Email" />
+        <textarea class="p-3 rounded border border-gray-300" rows="4" placeholder="Message"></textarea>
+        <button type="submit" class="px-4 py-2 rounded bg-gradient-to-r from-amber-400 to-orange-600 text-white w-max transition-all duration-300 ease-in-out hover:scale-105">Send Message</button>
+      </form>
+    </section>
+    <section class="p-6 bg-white/80 rounded shadow">
+      <h2 class="serif text-2xl mb-2">Our Hyderabad, India</h2>
+      <p class="sans text-gray-700">Address: 123 Market Street, Hyderabad, India</p>
+      <p class="sans text-gray-700">Phone: +91 12345 67890</p>
+    </section>
+  </main>
+  <footer class="mt-6 w-full text-center text-sm text-gray-600">&copy; 2025 Niyantri Coffee</footer>
+  <script>window.addEventListener('load', () => document.body.classList.remove('opacity-0'));</script>
+</body>
+</html>
