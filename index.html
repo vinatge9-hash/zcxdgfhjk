@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Fonts: Playfair Display (serif) and Inter (sans) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyantri Coffee</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap');
+    .serif { font-family: 'Playfair Display', serif; }
+    .sans { font-family: 'Inter', sans-serif; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind config for a more coffee-toned palette can be added here if needed -->
+</head>
+<body class="opacity-0 transition-opacity duration-1000 ease-in-out" onload="document.body.classList.add('opacity-0'); window.requestAnimationFrame(() => document.body.classList.remove('opacity-0'))">
+  <!-- HERO NAVIGATION -->
+  <nav class="absolute top-0 left-0 right-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-md text-white z-20">
+    <div class="max-w-full w-full px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl font-semibold serif">Niyantri Coffee</span>
+      </div>
+      <div class="hidden md:flex space-x-6 sans">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="hover:underline">Cart</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="menu.html" class="px-4 py-2 text-sm rounded transition-all duration-300 ease-in-out hover:scale-105 bg-gradient-to-r from-amber-400 to-orange-600">Order Online</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="w-full h-screen bg-cover bg-center" style="background-image: url('https://pixabay.com/get/gc4f5ea5441836a562a9b54b2d3f8f0d84b7e0e9fd77e3d15a31e9ee2bbd465c7f241be37be810219090512e82fa59fe4d8110fdf549f1bb7d11061d9635a36ca_640.jpg');">
+    <div class="flex items-center justify-center h-full w-full bg-black bg-opacity-40">
+      <div class="text-center px-6 py-8 max-w-3xl">
+        <h1 class="serif text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-6">Niyantri Coffee</h1>
+        <p class="sans text-white text-lg md:text-xl mb-6">Elegant, crafted coffee experiences. Precision in every cup.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="menu.html" class="px-6 py-3 rounded-full text-white bg-gradient-to-r from-amber-400 to-orange-600 transition-all duration-300 ease-in-out hover:scale-105">Order Now</a>
+          <a href="about.html" class="px-6 py-3 rounded-full bg-white text-gray-800 border border-gray-300 transition-all duration-300 ease-in-out hover:scale-105">Our Story</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-4 left-0 right-0 flex justify-center">
+      <span class="text-white opacity-70 animate-bounce" aria-label="scroll down">⌄</span>
+    </div>
+  </header>
+
+  <!-- TESTIMONIALS / QUOTES -->
+  <section class="w-full py-16 px-6 bg-white">
+    <div class="text-center mb-8">
+      <h2 class="serif text-3xl md:text-4xl mb-2">What coffee lovers say</h2>
+      <p class="sans text-gray-700">A few words from our patrons about the Niyantri experience.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-800/50 p-6 rounded-lg shadow-md text-white">
+        <blockquote class="text-lg italic">"The aroma, the artful pour, and the warm ambiance make every visit a moment of calm in a busy day."</blockquote>
+        <cite class="block mt-4 text-right">- A. Kapoor</cite>
+      </div>
+      <div class="bg-gray-800/50 p-6 rounded-lg shadow-md text-white">
+        <blockquote class="text-lg italic">"A perfect balance of bold flavors and soft notes. The staff here truly understands the craft."</blockquote>
+        <cite class="block mt-4 text-right">- S. Mehta</cite>
+      </div>
+      <div class="bg-gray-800/50 p-6 rounded-lg shadow-md text-white">
+        <blockquote class="text-lg italic">"Niyantri Coffee elevates the everyday coffee routine to an exquisite ritual."</blockquote>
+        <cite class="block mt-4 text-right">- R. Singh</cite>
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full bg-gray-900 text-white py-6 text-center">
+    <p>&copy; 2025 Niyantri Coffee. All rights reserved.</p>
+  </footer>
+
+  <script>window.addEventListener('load', () => document.body.classList.remove('opacity-0'));</script>
+</body>
+</html>
