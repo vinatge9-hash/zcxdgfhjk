@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyantri Coffee - About</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap');
+    .serif { font-family: 'Playfair Display', serif; }
+    .sans { font-family: 'Inter', sans-serif; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 sans">
+  <nav class="bg-black bg-opacity-40 backdrop-filter backdrop-blur-md text-white py-4 px-6 fixed top-0 left-0 right-0 z-20">
+    <div class="flex items-center justify-between">
+      <span class="text-2xl serif">Niyantri Coffee</span>
+      <div class="space-x-4 hidden md:flex">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="hover:underline">Cart</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <main class="mt-20 max-w-full w-full">
+    <section class="mb-8 p-6 bg-white/80 rounded shadow">
+      <h1 class="serif text-4xl mb-2">Our Story</h1>
+      <p class="sans text-gray-700">Niyantri Coffee is a celebration of craft, balance, and hospitality. Rooted in a meticulous approach to sourcing, roasting, and brewing, we aim to create moments of quiet joy in every cup.</p>
+    </section>
+    <section class="p-6 bg-white/80 rounded shadow">
+      <h2 class="serif text-3xl mb-2">Our Roasts</h2>
+      <p class="sans text-gray-700">Small-batch roasts, tuned for clarity and depth. From light floral notes to bold chocolatey finishes, there is a profile for every palate.</p>
+    </section>
+  </main>
+  <footer class="mt-6 w-full text-center text-sm text-gray-600">&copy; 2025 Niyantri Coffee</footer>
+  <script>window.addEventListener('load', () => document.body.classList.remove('opacity-0'));</script>
+</body>
+</html>
